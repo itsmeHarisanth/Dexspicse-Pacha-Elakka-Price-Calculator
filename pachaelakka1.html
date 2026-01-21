@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dexspice | Pacha Elakka Rate Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  max-width: 420px;
+  margin: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.brand {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.brand img {
+  width: 90px;
+  margin-bottom: 8px;
+}
+
+.brand-name {
+  color: #1b5e20;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.brand-sub {
+  font-size: 16px;
+  color: #333;
+  margin-top: 4px;
+}
+
+input, button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  margin-top: 14px;
+  border-radius: 10px;
+}
+
+button {
+  background: #1b5e20;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.result {
+  margin-top: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="brand">
+    <!-- 🔴 Replace this URL with your REAL logo URL -->
+    <img src="https://drive.google.com/uc?export=download&id=11oHN9Cl2dOVTjzsesj5YXE0Sn_TrwN"
+     alt="Dexspice Logo"
+     style="width:90px;">
+
+    <h1 class="brand-name">dexspice</h1>
+    <div class="brand-sub">Pacha Elakka Rate Calculator</div>
+  </div>
+
+  <input type="number" id="rate" placeholder="Enter Rate">
+
+  <button onclick="calculate()">Calculate</button>
+
+  <div class="result" id="result"></div>
+
+</div>
+
+<script>
+function calculate() {
+  let rate = document.getElementById("rate").value;
+
+  if(rate === "" || rate <= 150){
+    document.getElementById("result").innerText = "Enter a valid rate";
+    return;
+  }
+
+  let output = (rate - 150) / 5.5;
+  document.getElementById("result").innerText =
+    "Final Value: " + output.toFixed(2);
+}
+</script>
+
+</body>
+</html>
